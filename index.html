@@ -7,17 +7,73 @@
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="index.css">
     <title>Document</title>
 </head>
 <body>
-    <div id="root">
+    <div class="can">
+        <canvas id="myChart" style="width:1000px; height:220px;"></canvas>
+      </div>
+      
+     
+      
+      <script>
+        const ctx = document.getElementById('myChart');
+      
+        new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN','JUL','AUG','SEP','OCT','NOV','DEC'],
+                datasets: [{
+                label: 'My First Dataset',
+                data: [100, 70, 90, 70, 85, 60,75,60,90,80,110,100],
+                fill: 'box-shadow: 2px 59px 32px 0px rgba(0, 144, 255, 0.2);',
+                borderColor: 'rgb(31, 142, 241)',
+                tension: 0.1,
+                pointBackgroundColor:'rgb(31, 142, 241)',
+                pointBorderColor:'rgb(31, 142, 241)',
+                backgroundColor:'rgb(31, 142, 241)',
+                innerWidth:'1200px'
+                
 
-        
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                
+              }
+            }
+          }
+        });
+      </script>
+    <!-- <div id="root">
+        <canvas id="myChart"></canvas>
     </div>
 
 
-
-    <script src="index.js" type="text/babel"></script>
+    <script src="path/to/chartjs/dist/chart.umd.js"></script>
+    <script>
+        let ctx = document.querySelector('#myChart').getContext('2d')
+        const labels = Utils.months({count: 12});
+        const data = {
+        labels: labels,
+        datasets: [{
+            label: 'My First Dataset',
+            data: [65, 59, 80, 81, 56, 55, 40],
+            fill: false,
+            borderColor: 'rgb(75, 192, 192)',
+            tension: 0.1
+        }]
+        };
+        const myChart = new Chart(ctx, {
+            type:'line',
+            data:data,
+            
+        });
+    </script> -->
+    <!-- <script src="index.js" type="text/babel"></script> -->
 
 </body>
 </html>
